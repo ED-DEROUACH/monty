@@ -1,5 +1,6 @@
 #include "monty.h"
 
+bus_t bus = {NULL, NULL, NULL, 0};
 /**
  * f_div - Divides the top element of the stack from the second top element.
  * @head: Stack head
