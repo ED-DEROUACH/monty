@@ -24,7 +24,7 @@ void f_push(stack_t **head, unsigned int counter)
 
     for (j = is_negative; j < len; j++)
     {
-        if (!isdigit(bus.arg[j]))
+        if (!isdigit(bus.arg[j]) && bus.arg[j] != '-')
         {
             valid_argument = 0;
             break;
