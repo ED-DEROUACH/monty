@@ -14,7 +14,7 @@ void f_push(stack_t **head, unsigned int counter)
     int is_negative = (bus.arg[0] == '-') ? 1 : 0;
     int valid_argument = 1;
 
-    if (!bus.arg || len == 0)
+    if (!bus.arg)
     {
         fprintf(stderr, "L%d: usage: push integer\n", counter);
         fclose(bus.file);
@@ -24,7 +24,7 @@ void f_push(stack_t **head, unsigned int counter)
 
     for (j = is_negative; j < len; j++)
     {
-        if (!isdigit(bus.arg[j]) && bus.arg[j] != '-')
+        if (!isdigit(bus.arg[j]))
         {
             valid_argument = 0;
             break;
@@ -42,5 +42,6 @@ void f_push(stack_t **head, unsigned int counter)
     }
 
     n = (is_negative) ? -n : n;
+
     addnode(head, n);
 }
